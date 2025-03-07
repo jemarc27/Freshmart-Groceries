@@ -6,17 +6,17 @@ client = MongoClient(Config.MONGO_URI)
 db = client.get_database()
 
 class PersonalInfo:
-    def __init__(self, Name, Date_of_birth, Contact_number, Emergency_contact_number):
+    def __init__(self, Name, Date_of_birth, Contact_Number, Emergency_contact_number):
         self.Name = Name
         self.Date_of_birth = Date_of_birth
-        self.Contact_number = Contact_number
+        self.Contact_Number = Contact_Number
         self.Emergency_contact_number = Emergency_contact_number
 
     def save(self):
         personal_info_data = {
             "Name": self.Name,
             "Date_of_birth": self.Date_of_birth,
-            "Contact_number": self.Contact_number,
+            "Contact_Number": self.Contact_Number,
             "Emergency_contact_number": self.Emergency_contact_number
         }
         result = db.personal_info.insert_one(personal_info_data)

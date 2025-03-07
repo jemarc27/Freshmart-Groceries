@@ -6,7 +6,7 @@ class EmployeeController:
     def create_employee(data):
         try:
             # Validate required fields
-            required_fields = ["Name", "Date_of_birth", "Contact_number", "Emergency_contact_number"]
+            required_fields = ["Name", "Date_of_birth", "Contact_Number", "Emergency_contact_number"]
             for field in required_fields:
                 if field not in data:
                     raise ValueError(f"Missing required field: {field}")
@@ -15,7 +15,7 @@ class EmployeeController:
             employee = PersonalInfo(
                 Name=data["Name"],
                 Date_of_birth=data["Date_of_birth"],
-                Contact_number=data["Contact_number"],
+                Contact_Number=data["Contact_Number"],
                 Emergency_contact_number=data["Emergency_contact_number"]
             )
             employee.save()
@@ -24,7 +24,7 @@ class EmployeeController:
             return {
                 "Name": employee["Name"],
                 "Date_of_birth": employee["Date_of_birth"],
-                "Contact_number": employee["Contact_number"],
+                "Contact_Number": employee["Contact_Number"],
                 "Emergency_contact_number": employee["Emergency_contact_number"]
             }
         except Exception as e:
@@ -41,7 +41,7 @@ class EmployeeController:
                 return {
                     "Name": employee["Name"],
                     "Date_of_birth": employee["Date_of_birth"],
-                    "Contact_number": employee["Contact_number"],
+                    "Contact_Number": employee["Contact_Number"],
                     "Emergency_contact_number": employee["Emergency_contact_number"]
                 }
             return None
@@ -55,7 +55,7 @@ class EmployeeController:
             return [{
                 "Name": emp["Name"],
                 "Date_of_birth": emp["Date_of_birth"],
-                "Contact_number": emp["Contact_number"],
+                "Contact_Number": emp["Contact_Number"],
                 "Emergency_contact_number": emp["Emergency_contact_number"]
             } for emp in employees]
         except Exception as e:
