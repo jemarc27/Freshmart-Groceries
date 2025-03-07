@@ -22,10 +22,10 @@ class EmployeeController:
 
             # Return the created employee data
             return {
-                "Name": employee.Name,
-                "Date_of_birth": employee.Date_of_birth,
-                "Contact_number": employee.Contact_number,
-                "Emergency_contact_number": employee.Emergency_contact_number
+                "Name": employee["Name"],
+                "Date_of_birth": employee["Date_of_birth"],
+                "Contact_number": employee["Contact_number"],
+                "Emergency_contact_number": employee["Emergency_contact_number"]
             }
         except Exception as e:
             raise Exception(f"Error creating employee: {str(e)}")
